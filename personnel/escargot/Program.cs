@@ -4,25 +4,33 @@
     {
         static void Main(string[] args)
         {
-            string snake = "_@_ö";
-            int PositionActu = 2;
-            Console.CursorVisible = false;
 
+
+
+            snail snail = new snail();
+
+            Console.CursorVisible = false;
             do
             {
                 Console.ForegroundColor = ConsoleColor.Blue;
-                Console.SetCursorPosition(PositionActu, 10);
-                Console.WriteLine(snake);
-                Console.SetCursorPosition(PositionActu - 1, 10);
+                Console.SetCursorPosition(snail._position
+                , 10);
+                Console.WriteLine(snail._skin);
+                Console.SetCursorPosition(snail._position - 1, 10);
                 Console.WriteLine(" ");
-                Console.SetCursorPosition(PositionActu, 10);
-                PositionActu++;
-                Thread.Sleep(50);
-            } while (PositionActu < 30);
+                Console.SetCursorPosition(snail._position, 10);
+                snail._position++;
+                Thread.Sleep(500);
+            } while (snail._position < 30);
+
             Console.WriteLine("____");
 
-
-
         }
+    }
+    class snail
+    {
+        public string _color = "Blue";
+        public int _position = 2;
+        public string _skin = "_@_ö";
     }
 }
