@@ -29,7 +29,7 @@ namespace Parachutiste
          @" / \ ",
         };
 
-        public int x = 10;
+        public int x;
         public int y;
         public bool parachuteIsOpen;
 
@@ -44,21 +44,31 @@ namespace Parachutiste
                 else
                 {
                     y -= 3;
-
-                    if (y < Config.SCREEN_HEIGHT / 2)
-                    {
-                        parachuteIsOpen = true;
-                    }
-
-                    else
-                    {
-                        parachuteIsOpen = false;
-                    }
                 }
 
+                if (y < Config.SCREEN_HEIGHT / 2)
+                {
+                    parachuteIsOpen = true;
+                }
+            }
+            else
+            {
+                parachuteIsOpen = false;
             }
 
         }
-    }
+        public void draw()
+        {
+            string[] view = parachuteIsOpen ? withParachute : withoutParachute;
+            for (int i = 0; i < view.Length; i++)
+            {
+                Console.SetCursorPosition(x, Config.SCREEN_HEIGHT - this.y + i);
+                Console.Write(view[i]);
+            }
+            
+        }
 
+    }
 }
+
+

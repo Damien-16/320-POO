@@ -18,22 +18,39 @@ namespace Parachutiste
             @"  \_______ --------- __>-} ",
             @"        \_____|_____/   |  "
         };
-        private int x = 0;
-        private int y = 1;
+        private int _x = 0;
+        private int _y = 1;
         public void draw()
         {
             for (int i = 0; i < view.Length; i++)
             {
-                Console.SetCursorPosition(x, y + i);
+                Console.SetCursorPosition(_x,i);
                 Console.WriteLine(view[i]);
             }
 
         }
         public void update()
         {
-            x++;
+            _x++;
         }
-
+        public Plane()
+        {
+            _x = 0;
+            _y = Config.SCREEN_HEIGHT;
+            parachutists = new List<Para>();
+        }
+        public void board(Para para)
+        {
+            this.parachutists.Add(para);
+        }
+        internal Para dropParachutist()
+        {
+            Para parachutist = parachutists.First();
+            parachutists.Remove(parachutist);
+            parachutist.x = _x;
+            parachutist.y = this._y;
+            return parachutist;
+        }
     }
 
 }
