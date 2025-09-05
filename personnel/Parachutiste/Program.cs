@@ -7,7 +7,20 @@ namespace Parachutiste
     {
         static void Main(string[] args)
         {
+            Plane plane = new Plane();
+            while (true)
+            {
+                // Modifier le modèle (ce qui *est*)
+                plane.update();
+                
 
+     // Modifier ce que l'on *voit*
+     Console.Clear();
+                plane.draw();
+
+                // Temporiser
+                Thread.Sleep(100);
+            }
 
         }
         static class Config
@@ -17,6 +30,7 @@ namespace Parachutiste
         }
         class Plane
         {
+
             private string[] view =
       {
             @" _                         ",
@@ -26,10 +40,23 @@ namespace Parachutiste
             @"  \_______ --------- __>-} ",
             @"        \_____|_____/   |  "
         };
+            private int x = 0;
+            private int y = 5;
+            public void draw()
+            {
+                for (int i = 0; i < view.Length; i++)
+                {
+                    Console.SetCursorPosition( x , y +i);
+                    Console.WriteLine(view[i]);
+                }
 
-        
+            }
+            public void update() 
+            {
+                x++;
+            }
         }
-    
+        
 
         class Para
         {
