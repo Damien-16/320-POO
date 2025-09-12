@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Drones.Model
+namespace Drones
 {
     public partial class Building
     {
@@ -14,17 +14,17 @@ namespace Drones.Model
         private int _y;
         private int height = 30;
         private int deep = 40;
-        private string color;
+        private string _color;
 
         public int X
         {
             get
             {
-                return _x;
+                return X1;
             }
             set
             {
-                _x = value;
+                X1 = value;
             }
 
         }
@@ -40,20 +40,8 @@ namespace Drones.Model
             }
 
         }
-        public string Color
-        {
-            get
-            {
-                return color;
-            }
-            set
-            {
-                color = value;
-            }
-        }
 
-
-
-
+        public int X1 { get => _x; set => _x = value; }
+        public int Y1 { get => _y; set => _y = value; }
     }
 }

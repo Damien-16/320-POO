@@ -1,4 +1,4 @@
-using Drones.Model;
+using Drones;
 using System.Xml.Schema;
 
 namespace Drones
@@ -28,13 +28,13 @@ namespace Drones
             Building building = new Building();
             building.X = 50;
             building.Y = 50;
-            building.Color = "red";
+           
             city.Add(building);
 
 
 
             // Démarrage
-            Application.Run(new AirSpace(fleet));
+            Application.Run(new AirSpace(fleet, city));
         }
     }
 }

@@ -5,16 +5,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Drones.View
+namespace Drones
 {
     public partial class Building
     {
-        private Pen BuildingBrush = new Pen(new SolidBrush(Color.Purple), 3);
+        private Pen BuildingBrush = new Pen(new SolidBrush(Color.Red), 3);
 
         public void Render(BufferedGraphics drawingSpace)
         {
-            drawingSpace.Graphics.DrawEllipse(BuildingBrush, new Rectangle(_x - 4, _y - 2, 8, 8));
-            drawingSpace.Graphics.DrawString($"{this}", TextHelpers.drawFont, TextHelpers.writingBrush, x + 5, y - 5);
+            drawingSpace.Graphics.DrawEllipse(BuildingBrush, new Rectangle(X - 4, Y - 2, 8, 8));
         }
 
 
