@@ -12,8 +12,8 @@ namespace Drones
 
         private int _x;
         private int _y;
-        private int height = 30;
-        private int deep = 40;
+        private const int height = 100;
+        private const int deep = 100;
         private string _color;
 
         public int X
@@ -43,5 +43,6 @@ namespace Drones
 
         public int X1 { get => _x; set => _x = value; }
         public int Y1 { get => _y; set => _y = value; }
+
     }
 }

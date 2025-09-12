@@ -28,7 +28,7 @@ namespace Drones
             Building building = new Building();
             building.X = 50;
             building.Y = 50;
-           
+
             city.Add(building);
 
 
