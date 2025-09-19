@@ -25,12 +25,11 @@ namespace Drones
 
             // Création des building
             List<Building> city = new List<Building>();
-            Building building = new Building();
-            building.X = 50;
-            building.Y = 50;
+            Building factory1 = new Factory(5.55, "toto", 1, 1);
+            city.Add(factory1);
 
-            city.Add(building);
-
+            Building factory2 = new Factory(5.55, "factory", 100, 100);
+            city.Add(factory1);
 
 
             // Démarrage

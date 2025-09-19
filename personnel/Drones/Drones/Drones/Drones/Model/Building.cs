@@ -10,21 +10,22 @@ namespace Drones
     {
         Random r = new Random();
 
-        private int _x;
-        private int _y;
-        private const int height = 100;
-        private const int deep = 100;
-        private string _color;
+        protected int _x;
+        protected int _y;
+        protected const int height = 100;
+        protected const int deep = 100;
+        protected string _color;
+        protected string _name ;
 
         public int X
         {
             get
             {
-                return X1;
+                return _x;
             }
             set
             {
-                X1 = value;
+                _x = value;
             }
 
         }
@@ -41,8 +42,6 @@ namespace Drones
 
         }
 
-        public int X1 { get => _x; set => _x = value; }
-        public int Y1 { get => _y; set => _y = value; }
-
+      
     }
 }
