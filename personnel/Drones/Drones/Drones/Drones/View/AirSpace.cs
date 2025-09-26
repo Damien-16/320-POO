@@ -55,6 +55,12 @@ namespace Drones
             {
                 drone.Update(interval);
             }
+
+            if (fleet.Count > 10)
+            {
+                throw new Exception("trop de drone");
+            }
+
         }
 
         // Méthode appelée à chaque frame
