@@ -22,19 +22,9 @@ namespace Drones
             drone.Y = 100;
             drone.Name = "Joe";
             fleet.Add(drone);
-            fleet.Add(drone);
-            fleet.Add(drone);
-            fleet.Add(drone);
-            fleet.Add(drone);
-            fleet.Add(drone);
-            fleet.Add(drone);
-            fleet.Add(drone);
-            fleet.Add(drone);
-            fleet.Add(drone);
-            fleet.Add(drone);
-            fleet.Add(drone);
 
-            if (fleet.Count >= 10)
+
+            if (fleet.Count > 10)
             {
                     throw new Exception("trop de drone");
 
