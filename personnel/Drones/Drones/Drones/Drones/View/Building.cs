@@ -2,49 +2,33 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace Drones
 {
     public partial class Building
     {
-        public Building(int _x, int _y) {
-            this._y = _y;
-            this._x = _x;
-        }
-        private Pen BuildingBrush = new Pen(new SolidBrush(Color.Red), 3);
+        protected Pen BuildingBrush = new Pen(new SolidBrush(Color.Red), 3);
 
-        public void Render(BufferedGraphics drawingSpace)
+        public virtual void Render(BufferedGraphics drawingSpace)
         {
+            using (Font font = new Font("Arial", 10))
+            using (Brush brush = new SolidBrush(Color.Black))
+            {
+                if (!string.IsNullOrEmpty(Name))
+                {
+                    drawingSpace.Graphics.DrawString(Name, font, brush, X - 4, Y - 20);
+                }
+            }
 
             drawingSpace.Graphics.DrawRectangle(BuildingBrush, new Rectangle(X - 4, Y - 2, 70, 70));
         }
-
-
-
     }
 
-    public class Factory : Building
-    {
-        private double _consomation;
-        public Factory(double cum, string name, int _x, int _y) : base(_x, _y)
-        {
-            this._consomation = cum;
 
 
-        }
-    }
-        public class Store : Building
-        {
-            private double _consomation;
-            public Store(double cum, string name, int _x, int _y) : base(_x, _y)
-            {
-                this._consomation = cum;
-
-
-            }
-
-        }
 }
 

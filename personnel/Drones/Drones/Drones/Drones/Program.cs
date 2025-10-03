@@ -1,4 +1,5 @@
 using Drones;
+using Drones.Model;
 using System.Xml.Schema;
 
 namespace Drones
@@ -17,9 +18,7 @@ namespace Drones
 
             // Création de la flotte de drones
             List<Drone> fleet= new List<Drone>();
-            Drone drone = new Drone();
-            drone.X = 100;
-            drone.Y = 100;
+            Drone drone = new Drone(100,100);
             drone.Name = "Joe";
             fleet.Add(drone);
 
@@ -32,11 +31,17 @@ namespace Drones
 
             // Création des building
             List<Building> city = new List<Building>();
-            Building factory1 = new Factory(5.55, "toto", 1, 1);
-            city.Add(factory1);
 
-            Building factory2 = new Factory(5.55, "factory", 100, 100);
-            city.Add(factory1);
+            // Usines
+            city.Add(new Factory(1200.5, "Factory ", 100, 100));
+            city.Add(new Factory(800.3, "Factory ", 300, 150));
+
+            // Magasins
+            city.Add(new Store("Store ",200,250,new List<string> { "Lundi: 8h-18h", "Mardi: 8h-18h", "Mercredi: 8h-18h" }
+            ));
+
+            city.Add(new Store("Store ",350,300,new List<string> { "Lundi: 9h-17h", "Mardi: 9h-17h", "Mercredi: 9h-17h" }
+            ));
 
 
             // Démarrage
