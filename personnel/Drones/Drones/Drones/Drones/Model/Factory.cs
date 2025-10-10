@@ -8,7 +8,7 @@ namespace Drones
 {
     public class Factory : Building
     {
-        public double PowerConsumption { get; set; } // kWh par jour
+        public double PowerConsumption { get; set; } // kWh/jour
 
         public Factory(double powerConsumption, string name, int x, int y) : base(x, y)
         {
@@ -21,14 +21,20 @@ namespace Drones
             using (Font font = new Font("Arial", 10))
             using (Brush brush = new SolidBrush(Color.Black))
             {
+                // Nom au-dessus
                 if (!string.IsNullOrEmpty(Name))
                 {
-                    drawingSpace.Graphics.DrawString(Name, font, brush, X - 4, Y - 20);
+                    drawingSpace.Graphics.DrawString(Name, font, brush, X , Y - 30);
                 }
 
-                drawingSpace.Graphics.DrawRectangle(BuildingBrush, new Rectangle(X - 4, Y - 2, 70, 70));
+                // PowerConsumption juste en dessous du nom
+                drawingSpace.Graphics.DrawString($"{PowerConsumption} kWh/jour", font, brush, X , Y - 15);
+
+                // Rectangle représentant l'usine
+                drawingSpace.Graphics.DrawRectangle(BuildingBrush, new Rectangle(X , Y, 70, 70));
             }
         }
+
     }
 
 

@@ -19,33 +19,5 @@ namespace Drones.Model
             this.x = _x;
             this.y = _y;
         }
-
-        public int X
-        {
-            get
-            {
-                return _x;
-            }
-            set
-            {
-                _x = value;
-            }
-
-        }
-        public int Y
-        {
-            get
-            {
-                return _y;
-            }
-            set
-            {
-                _y = value;
-            }
-
-        }
-
-
-
     }
 }

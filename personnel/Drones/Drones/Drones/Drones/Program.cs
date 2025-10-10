@@ -29,19 +29,12 @@ namespace Drones
 
             }
 
-            // Création des building
             List<Building> city = new List<Building>();
-
-            // Usines
             city.Add(new Factory(1200.5, "Factory ", 100, 100));
             city.Add(new Factory(800.3, "Factory ", 300, 150));
 
-            // Magasins
-            city.Add(new Store("Store ",200,250,new List<string> { "Lundi: 8h-18h", "Mardi: 8h-18h", "Mercredi: 8h-18h" }
-            ));
-
-            city.Add(new Store("Store ",350,300,new List<string> { "Lundi: 9h-17h", "Mardi: 9h-17h", "Mercredi: 9h-17h" }
-            ));
+            city.Add(new Store("Store ",500,250,new List<string> { "Lundi: 8h-18h", "Mardi: 8h-18h", "Mercredi: 8h-18h" }));
+            city.Add(new Store("Store ",350,400,new List<string> { "Lundi: 9h-17h", "Mardi: 9h-17h", "Mercredi: 9h-17h" }));
 
 
             // Démarrage
